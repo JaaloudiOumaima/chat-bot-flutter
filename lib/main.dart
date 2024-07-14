@@ -1,9 +1,10 @@
 import 'package:chat_bot_app/chat.page.dart';
 import 'package:flutter/material.dart';
-
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'home.page.dart';
 
-void main() {
+void main() async {
+    await dotenv.load();
   runApp(const MyApp());
 }
 

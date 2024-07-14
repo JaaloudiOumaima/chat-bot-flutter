@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'dart:io';
 import 'dart:async';
-
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
@@ -17,7 +17,7 @@ class _ChatBotPageState extends State<ChatBotPage> {
     {"message": "Hello", "type": "user"},
     {"message": "How can I help you", "type": "assistant"},
   ];
-
+  String apiKey = dotenv.env['OPENAI_API_KEY']!;
   TextEditingController queryController = TextEditingController();
   ScrollController scrollController = ScrollController();
 
@@ -117,7 +117,7 @@ class _ChatBotPageState extends State<ChatBotPage> {
                     Uri.https("api.openai.com", "/v1/chat/completions");
                     Map<String, String> headers = {
                       "Content-Type": "application/json",
-                      "Authorization": "Bearer ....."
+                      "Authorization": "Bearer  $apiKey"
                     };
 
                     var prompt = {
