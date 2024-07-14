@@ -119,7 +119,7 @@ class _ChatBotPageState extends State<ChatBotPage> {
                       "Content-Type": "application/json",
                       "Authorization": "Bearer ....."
                     };
-                    // API Key sk-proj-jB3x2yUzIshqlu51LpPgT3BlbkFJUEnJEcwudQfPIWojcJBh
+
                     var prompt = {
                       "model": "gpt-3.5-turbo",
                       "messages": [
